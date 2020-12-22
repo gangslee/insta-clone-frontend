@@ -10,6 +10,18 @@ const Wrapper = styled.div`
 
 const Box = styled.div`
   ${(props) => props.theme.whiteBox}
+  border-radius:0px;
+`;
+
+const StateChanger = styled(Box)`
+  text-align: center;
+  padding: 20px 0px;
+  width: 350px;
+`;
+
+const Link = styled.span`
+  color: ${(props) => props.theme.blueColor};
+  cursor: pointer;
 `;
 
 export default () => {
@@ -17,7 +29,19 @@ export default () => {
 
   return (
     <Wrapper>
-      <Box>{action === "logIn" ? "Log In" : "Sign Up"}</Box>
+      <StateChanger>
+        {action === "logIn" ? (
+          <>
+            Don't have an account?{" "}
+            <Link onClick={() => setAction("signUp")}>Sign up</Link>
+          </>
+        ) : (
+          <>
+            Have an account?{" "}
+            <Link onClick={() => setAction("logIn")}>Log in</Link>
+          </>
+        )}
+      </StateChanger>
     </Wrapper>
   );
 };
