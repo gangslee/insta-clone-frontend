@@ -71,16 +71,18 @@ export default ({ action, userName, firstName, lastName, email, setAction, secre
         </form>
       )}
     </Form>
-    <StateChanger>
-      {action === 'logIn' ? (
-        <>
-          Don't have an account? <Link onClick={() => setAction('signUp')}>Sign up</Link>
-        </>
-      ) : (
-        <>
-          Have an account? <Link onClick={() => setAction('logIn')}>Log in</Link>
-        </>
-      )}
-    </StateChanger>
+    {action !== 'confirm' && (
+      <StateChanger>
+        {action === 'logIn' ? (
+          <>
+            Don`t have an account? <Link onClick={() => setAction('signUp')}>Sign up</Link>
+          </>
+        ) : (
+          <>
+            Have an account? <Link onClick={() => setAction('logIn')}>Log in</Link>
+          </>
+        )}
+      </StateChanger>
+    )}
   </Wrapper>
 );
