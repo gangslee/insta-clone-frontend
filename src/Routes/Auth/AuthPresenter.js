@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import Button from "../../Components/Button";
-import Input from "../../Components/Input";
+import React from 'react';
+import styled from 'styled-components';
+import Button from '../../Components/Button';
+import Input from '../../Components/Input';
 
 const Wrapper = styled.div`
   min-height: 80vh;
@@ -46,42 +46,32 @@ const Form = styled(Box)`
   }
 `;
 
-export default ({
-  action,
-  username,
-  firstName,
-  lastName,
-  email,
-  setAction,
-  onSubmit,
-}) => (
+export default ({ action, userName, firstName, lastName, email, setAction, onSubmit }) => (
   <Wrapper>
     <Form>
-      {action === "logIn" ? (
+      {action === 'logIn' ? (
         <form onSubmit={onSubmit}>
-          <Input placeholder={"Email"} {...email} type="email" />
-          <Button text={"Log In"} />
+          <Input placeholder={'Email'} {...email} type="email" />
+          <Button text={'Log In'} />
         </form>
       ) : (
         <form onSubmit={onSubmit}>
-          <Input placeholder={"First name"} {...firstName} />
-          <Input placeholder={"Last name"} {...lastName} />
-          <Input placeholder={"Email"} {...email} type="email" />
-          <Input placeholder={"Username"} {...username} />
-          <Button text={"Sign Up"} />
+          <Input placeholder={'First name'} {...firstName} />
+          <Input placeholder={'Last name'} {...lastName} />
+          <Input placeholder={'Email'} {...email} type="email" />
+          <Input placeholder={'Username'} {...userName} />
+          <Button text={'Sign Up'} />
         </form>
       )}
     </Form>
     <StateChanger>
-      {action === "logIn" ? (
+      {action === 'logIn' ? (
         <>
-          Don't have an account?{" "}
-          <Link onClick={() => setAction("signUp")}>Sign up</Link>
+          Don't have an account? <Link onClick={() => setAction('signUp')}>Sign up</Link>
         </>
       ) : (
         <>
-          Have an account?{" "}
-          <Link onClick={() => setAction("logIn")}>Log in</Link>
+          Have an account? <Link onClick={() => setAction('logIn')}>Log in</Link>
         </>
       )}
     </StateChanger>
