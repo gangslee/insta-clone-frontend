@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Footer = styled.footer`
   display: flex;
@@ -8,6 +8,7 @@ const Footer = styled.footer`
   text-transform: uppercase;
   font-weight: 600;
   font-size: 12px;
+  margin: 50px 0px;
 `;
 
 const List = styled.ul`
