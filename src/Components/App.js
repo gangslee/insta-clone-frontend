@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { HashRouter as Router } from 'react-router-dom';
 
 import Theme from '../Styles/Theme';
-import Routes from './Router';
+import Routes from './Routes';
 import Footer from './Footer';
 import Header from './Header';
 
