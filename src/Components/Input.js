@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Container = styled.input`
   border: 0;
@@ -12,14 +12,9 @@ const Container = styled.input`
   padding: 0px 15px;
 `;
 
-const Input = ({
-  placeholder,
-  required = true,
-  value,
-  onChange,
-  type = "text",
-}) => (
+const Input = ({ placeholder, required = true, value, onChange, type = 'text', className }) => (
   <Container
+    className={className}
     placeholder={placeholder}
     required={required}
     value={value}
