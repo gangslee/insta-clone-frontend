@@ -1,9 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import { gql } from "apollo-boost";
-import { useQuery } from "react-apollo-hooks";
-import Loader from "../Components/Loader";
-import Post from "../Components/Post";
+import React from 'react';
+import Helmet from 'react-helmet';
+import styled from 'styled-components';
+import { gql } from 'apollo-boost';
+import { useQuery } from 'react-apollo-hooks';
+import Loader from '../Components/Loader';
+import Post from '../Components/Post';
 
 const FEED_QUERY = gql`
   {
@@ -47,6 +48,9 @@ export default () => {
 
   return (
     <Wrapper>
+      <Helmet>
+        <title>Feed | Insta-Clone</title>
+      </Helmet>
       {loading && <Loader />}
       {!loading &&
         data &&
@@ -55,6 +59,8 @@ export default () => {
           <Post
             key={post.id}
             id={post.id}
+            caption={post.caption}
+            location={post.location}
             user={post.user}
             files={post.files}
             likeCount={post.likeCount}
