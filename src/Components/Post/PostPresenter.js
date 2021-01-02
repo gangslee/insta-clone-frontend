@@ -10,6 +10,7 @@ const Post = styled.div`
   width: 100%;
   max-width: 600px;
   margin-bottom: 25px;
+  user-select: none;
 `;
 
 const Header = styled.header`
@@ -97,6 +98,7 @@ export default ({
   createdAt,
   newComment,
   currentItem,
+  toggleLike,
 }) => (
   <Post>
     <Header>
@@ -109,12 +111,12 @@ export default ({
     <Files>
       {files &&
         files.map((file, index) => (
-          <File id={file.id} src={file.url} showing={index === currentItem} />
+          <File key={file.id} id={file.id} src={file.url} showing={index === currentItem} />
         ))}
     </Files>
     <Meta>
       <Buttons>
-        <Button>{!isLiked ? <HeartFull /> : <HeartEmpty />}</Button>
+        <Button onClick={toggleLike}>{!isLiked ? <HeartEmpty /> : <HeartFull />}</Button>
         <Button>
           <Comment />
         </Button>
