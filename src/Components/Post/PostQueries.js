@@ -1,7 +1,7 @@
 import { gql } from 'apollo-boost';
 
 export const TOGGLE_LIKE = gql`
-  mutation toggleLike($postId: String!) {
+  mutation toggelLike($postId: String!) {
     toggleLike(postId: $postId)
   }
 `;
@@ -12,7 +12,7 @@ export const ADD_COMMENT = gql`
       id
       text
       user {
-        username
+        userName
       }
     }
   }
