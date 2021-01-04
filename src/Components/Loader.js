@@ -1,6 +1,6 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
-import { Logo } from './Icons';
+import React from "react";
+import styled, { keyframes } from "styled-components";
+import { Logo } from "./Icons";
 
 const Animation = keyframes`
     0%{
@@ -16,6 +16,8 @@ const Animation = keyframes`
 
 const Loader = styled.div`
   animation: ${Animation} 1s linear infinite;
+  width: 100%;
+  text-align: center;
 `;
 
 export default () => (
