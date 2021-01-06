@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Container = styled.button`
   width: 100%;
@@ -12,6 +12,7 @@ const Container = styled.button`
   text-align: center;
   padding: 7px 0px;
   font-size: 14px;
+  cursor: pointer;
 `;
 
 const Button = ({ text }) => <Container>{text}</Container>;

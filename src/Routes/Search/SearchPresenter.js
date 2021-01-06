@@ -1,15 +1,22 @@
-import React from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import FatText from "../../Components/FatText";
-import Loader from "../../Components/Loader";
-import UserCard from "../../Components/UserCard";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import FatText from '../../Components/FatText';
+import Loader from '../../Components/Loader';
+import UserCard from '../../Components/UserCard';
 
 const Wrapper = styled.div`
   height: 50vh;
 `;
 
-const Section = styled.div``;
+const Section = styled.div`
+  margin-bottom: 50px;
+  display: grid;
+  grid-gap: 25px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 160px;
+  grid-auto-rows: 160px;
+`;
 
 const SearchPresenter = ({ searchTerm, loading, data }) => {
   if (searchTerm === undefined) {
@@ -33,10 +40,11 @@ const SearchPresenter = ({ searchTerm, loading, data }) => {
           ) : (
             data.searchUser.map((user) => (
               <UserCard
+                key={user.id}
                 userName={user.userName}
                 isFollowing={user.isFollowing}
                 isSelf={user.isSelf}
-                url={user.url}
+                url={user.avatar}
               />
             ))
           )}
