@@ -45,6 +45,7 @@ const SearchPresenter = ({ searchTerm, loading, data }) => {
                 isFollowing={user.isFollowing}
                 isSelf={user.isSelf}
                 url={user.avatar}
+                id={user.id}
               />
             ))
           )}
